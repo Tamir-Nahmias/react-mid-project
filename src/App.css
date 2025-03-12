@@ -1,0 +1,69 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.users-container {
+  border: 1px solid black;
+}
+
+.user {
+  border: 2px solid red;
+  margin: 2vh 1vw;
+  padding: 2vh 1vw;
+  /* background-color: var(--bgcolor); */
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.1em 0.15em !important;
+  margin-inline: 0.15em !important;
+  font-size: 1em;
+  font-weight: 300;
+  font-family: inherit;
+  background-color: #e2ee73;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  border: 0.5px solid rgb(48, 130, 232);
+}
+.main-app-container {
+  display: flex;
+}
+
+.todos-per-user-container,
+.posts-per-user-container {
+  justify-items: center;
+  border: 0.5px solid black;
+  width: 60%;
+  margin-left: 2vw;
+}
+
+.todos-per-user-container > div,
+.posts-per-user-container > div {
+  border: 0.5px solid black;
+  justify-content: start;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-items: start;
+  margin: 3px;
+  text-align: start;
+}
+
+.posts-and-todos-container {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+#posts-container,
+#todos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
