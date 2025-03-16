@@ -2,46 +2,60 @@ import React, { useState } from "react";
 
 const OtherData = ({ address, setIsMouseOver, updateData, setUpdateData }) => {
   const { street, city, zipcode } = address;
+  const [addressHelper, setAddressHelper] = useState({
+    street: "",
+    city: "",
+    zipcode: "",
+  }); // inner state varilable obj
   return (
     <div
+      className="other-data-container"
       //   onClick={() => setIsMouseOver(false)}
-      style={{ backgroundColor: "lime", width: "fit-content" }}
     >
-      <label>Street : </label>
-      <input
-        type="text"
-        defaultValue={street}
-        onChange={(e) =>
-          setUpdateData({
-            ...updateData,
-            address: { ...address, street: e.target.value },
-          })
-        }
-      ></input>
-      <br></br>
-      <label>City : </label>
-      <input
-        type="text"
-        defaultValue={city}
-        onChange={(e) =>
-          setUpdateData({
-            ...updateData,
-            address: { ...address, city: e.target.value },
-          })
-        }
-      ></input>
-      <br></br>
-      <label>Zipcode : </label>
-      <input
-        type="text"
-        defaultValue={zipcode}
-        onChange={(e) =>
-          setUpdateData({
-            ...updateData,
-            address: { ...address, zipcode: e.target.value },
-          })
-        }
-      ></input>
+      <div>
+        <label>Street : </label>
+        <input
+          type="text"
+          defaultValue={street}
+          onChange={(e) => {
+            setAddressHelper({ ...addressHelper, street: e.target.value });
+            setUpdateData({
+              ...updateData,
+              address: { ...address, ...addressHelper },
+            });
+          }}
+        ></input>
+      </div>
+
+      <div>
+        <label>City : </label>
+        <input
+          type="text"
+          defaultValue={city}
+          onChange={(e) => {
+            setAddressHelper({ ...addressHelper, city: e.target.value });
+            setUpdateData({
+              ...updateData,
+              address: { ...address, ...addressHelper },
+            });
+          }}
+        ></input>
+      </div>
+
+      <div>
+        <label>Zipcode : </label>
+        <input
+          type="text"
+          defaultValue={zipcode}
+          onChange={(e) => {
+            setAddressHelper({ ...addressHelper, zipcode: e.target.value });
+            setUpdateData({
+              ...updateData,
+              address: { ...address, ...addressHelper },
+            });
+          }}
+        ></input>
+      </div>
     </div>
   );
 };
